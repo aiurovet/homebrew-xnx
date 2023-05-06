@@ -16,6 +16,6 @@ class Xnx < Formula
   end
 
   def install
-    prefix.install "xnx"
+    bin.install "xnx"
   end
 end
