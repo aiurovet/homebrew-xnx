@@ -16,6 +16,6 @@ class Xnx < Formula
   end
 
   def install
-    bin.install "xnx"
+    ln_s "xnx" "/usr/bin/xnx"
   end
 end
