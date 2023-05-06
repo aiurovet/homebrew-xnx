@@ -16,9 +16,6 @@ class Xnx < Formula
   end
 
   def post_install
-    #bin.install_symlink "xnx"
-    #bin.install "xnx"
-    puts "HERE"
-    system "ln", "-s", "-f", "#{bin}/xnx", "#{HOMEBREW_PREFIX}/bin/xnx"
+    system "ln", "-s", "-f", "xnx", "#{HOMEBREW_PREFIX}/bin/xnx"
   end
 end
