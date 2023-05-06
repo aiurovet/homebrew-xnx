@@ -15,12 +15,12 @@ class Xnx < Formula
     end
   end
 
-  install
-
   def install
     #bin.install_symlink "xnx"
     bin.install "xnx"
     system "echo", "HERE"
     system "ln", "-s", "-f", "#{bin}/xnx", "#{HOMEBREW_PREFIX}/bin/xnx"
   end
+
+  install
 end
