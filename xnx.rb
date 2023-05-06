@@ -19,7 +19,7 @@ class Xnx < Formula
 
   def install
     prefix.install "xnx"
-    prefix.install_symlink "xnx" => "xnx"
+    prefix.install_symlink "xnx" => "/usr/bin/xnx"
     # ln_s "xxnx", "/usr/bin/xnx"
   end
 end
