@@ -15,8 +15,8 @@ class Xnx < Formula
     end
   end
 
-  # def install
-  #   prefix.install "xnx"
-  #   #ln_sf "#{HOMEBREW_PREFIX}/xnx", "/usr/bin/xnx"
-  # end
+  def install
+    prefix.install "xnx"
+    #ln_sf "#{HOMEBREW_PREFIX}/xnx", "/usr/bin/xnx"
+  end
 end
