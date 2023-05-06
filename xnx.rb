@@ -15,7 +15,9 @@ class Xnx < Formula
     end
   end
 
-  def install
-    ln_s "xxnx", "/usr/bin/xnx"
-  end
+  link_overwrite "xnx"
+
+  # def install
+  #   ln_s "xxnx", "/usr/bin/xnx"
+  # end
 end
