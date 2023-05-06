@@ -1,4 +1,4 @@
-class XnxLinux < Formula
+class Xnx < Formula
   desc "Command-line utility for sophisticated search and replace followed by calling external executables"
   homepage "https://aiurovet.com/applications/xnx.html"
   version "0.1.0"
