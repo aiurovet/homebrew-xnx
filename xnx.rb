@@ -16,9 +16,13 @@ class Xnx < Formula
   end
 
   def install
-    #bin.install_symlink "xnx"
-    #bin.install "xnx"
-    system "echo", "HERE"
-    system "ln", "-s", "-f", "#{bin}/xnx", "#{HOMEBREW_PREFIX}/bin/xnx"
+    if build.bottle?
+      system "bottle", "do", "--merge", "--no-commit"
+    else
+      #bin.install_symlink "xnx"
+      #bin.install "xnx"
+      system "echo", "HERE"
+      system "ln", "-s", "-f", "#{bin}/xnx", "#{HOMEBREW_PREFIX}/bin/xnx"
+    end
   end
 end
