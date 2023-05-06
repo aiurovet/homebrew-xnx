@@ -8,7 +8,7 @@ class Xnx < Formula
   bottle do
     if OS.linux?
       root_url "https://github.com/aiurovet/xnx/raw/master/app/Linux"
-      sha256 x86_64_linux: "6af1847d443fbecc210619e457cd603012014535f8851184c0fbecdf2751ff95"
+      sha256 x86_64_linux: "3bf7354cebee1f148d3540e2dd6bcad5c7c2f8db9f6bd74bd16c7c6b01f5b95d"
     elsif OS.mac?
       root_url "https://github.com/aiurovet/xnx/raw/master/app/macOS"
       sha256 big_sur: "9829601feda4401a92f5587cfa6e9f7b40b1e4f71e6152a3934bca7ba9f3309a"
