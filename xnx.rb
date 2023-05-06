@@ -16,7 +16,6 @@ class Xnx < Formula
   end
 
   def post_install
-    bin.install_symlink "xnx" => "#{HOMEBREW_PREFIX}/bin/xnx"
-    #system "ln", "-s", "-f", "xnx", "#{HOMEBREW_PREFIX}/bin/xnx"
+    ln_sf "#{HOMEBREW_PREFIX}/Cellar/xnx/0.1.0/xnx", "#{HOMEBREW_PREFIX}/bin/xnx"
   end
 end
