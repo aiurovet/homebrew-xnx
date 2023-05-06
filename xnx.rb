@@ -17,7 +17,8 @@ class Xnx < Formula
 
   link_overwrite "xnx"
 
-  # def install
-  #   ln_s "xxnx", "/usr/bin/xnx"
-  # end
+  def install
+    prefix.install_symlink "/usr/bin/xnx" => "xnx"
+    # ln_s "xxnx", "/usr/bin/xnx"
+  end
 end
