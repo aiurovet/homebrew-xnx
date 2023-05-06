@@ -15,6 +15,8 @@ class Xnx < Formula
     end
   end
 
+  install
+
   def install
     #bin.install_symlink "xnx"
     bin.install "xnx"
