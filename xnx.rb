@@ -17,6 +17,7 @@ class Xnx < Formula
 
   def install
     prefix.install "xnx"
+    prefix.install_symlink "xnx"
     #ln_sf "#{HOMEBREW_PREFIX}/xnx", "/usr/bin/xnx"
   end
 end
