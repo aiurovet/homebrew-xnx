@@ -1,3 +1,8 @@
+#
+#   brew tap aiurovet/xnx && brew install xnx
+#
+#   brew uninstall xnx && brew untap aiurovet/xnx
+#
 class Xnx < Formula
   # Getting short class name, as "#{name}" gets stripped off the namespace only
   # when reached the install function
@@ -44,10 +49,10 @@ class Xnx < Formula
   # Unpack downloaded archive explicitly and create necessary symlinks
   #
   def install
-    dir_name = "#{HOMEBREW_PREFIX}/Cellar/"
-    sym_path = "#{dir_name}#{$name}/#{version}/#{$name}"
+    cellar_root = "#{HOMEBREW_PREFIX}/Cellar/"
+    symlnk_path = "#{cellar_root}#{$name}/#{version}/#{$name}"
 
-    system "tar", "-C", "#{dir_name}", "-x", "-f", cached_download
-    bin.install_symlink "#{sym_path}"
+    system "tar", "-C", "#{cellar_root}", "-x", "-f", cached_download
+    bin.install_symlink "#{symlnk_path}"
   end
 end
