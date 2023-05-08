@@ -1,21 +1,53 @@
 class Xnx < Formula
-  desc "Command-line utility for sophisticated search and replace followed by calling external executables"
-  homepage "https://aiurovet.com/applications/xnx.html"
-  url "https://github.com/aiurovet/xnx"
-  version "0.1.0"
-  license "MIT"
+  # Getting short class name, as "#{name}" gets stripped off the namespace only
+  # when reached the install function
+  #
+  x = "#{name}".split(":")
+  $name = x[x.length - 1].downcase
 
+  # Formula description
+  #
+  desc "Command-line utility for sophisticated search and replace followed by calling external executables"
+  license "MIT"
+  version "0.1.0"
+  homepage "https://aiurovet.com/applications/#{$name}.html"
+
+  # List of all setup variations
+  #
+  $setups = [{
+    "os_name" => "Linux",
+    "tar_name" => "#{$name}-#{version}-linux-amd64.tar.gz",
+    "base_url" => "https://github.com/aiurovet/#{$name}/raw/release/#{version}/app/Linux/",
+    "sha_256" => "f4556de71342b80c0233c0acff6a3ca037d321f25d33cdd61c798b1d87c723a6",
+  }, {
+    "os_name" => "macOS",
+    "tar_name" => "#{$name}-#{version}-macos.tar.gz",
+    "base_url" => "https://github.com/aiurovet/#{$name}/raw/release/#{version}/app/macOS/",
+    "sha_256" => "2d9a8fa883a91612b7382e9d2fea381709d4666bb0c6c7e2e9596c76b53d9f7c",
+  },];
+
+  # Getting this setup and full URL based on the current OS
+  #
+  $setup = $setups[OS.linux? ? 0 : 1];
+  $full_url = $setup["base_url"] + $setup["tar_name"]
+
+  url $full_url
+  sha256 $setup["sha_256"]
+
+  # Dummy bottle to avoid enforced build from source. Cacnnot unpack here, as
+  # the compiled Dart executable is giving weird output. The actual unpacking
+  # is done in the install function
+  #
   bottle do
-    if OS.linux?
-      root_url "https://github.com/aiurovet/xnx/raw/master/app/Linux"
-      sha256 x86_64_linux: "afa9930d72151e4d558153f24f6d4f1b2ec86a74403b47eaa80af61f882c44be"
-    elsif OS.mac?
-      root_url "https://github.com/aiurovet/xnx/raw/master/app/macOS"
-      sha256 big_sur: "9829601feda4401a92f5587cfa6e9f7b40b1e4f71e6152a3934bca7ba9f3309a"
-    end
   end
 
+  # Unpack downloaded archive explicitly and create necessary symlinks
+  #
   def install
-    bin.install_symlink "#{HOMEBREW_PREFIX}/Cellar/xnx/0.1.0/xnx"
+    dir_name = "#{HOMEBREW_PREFIX}/Cellar/"
+    sym_path = "#{dir_name}#{$name}/#{version}/#{$name}"
+
+    system "tar", "-C", "#{dir_name}", "-x", "-f", cached_download
+    bin.install_symlink "#{sym_path}"
   end
 end
