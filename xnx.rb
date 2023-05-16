@@ -26,12 +26,12 @@ class Xnx < Formula
   $setups = [{
     "os_name" => "Linux",
     "tar_name" => "#{$name}-#{version}-linux-amd64.tar.gz",
-    "base_url" => "https://github.com/aiurovet/#{$name}/raw/release/#{version}/app/Linux/",
+    "base_url" => "https://github.com/aiurovet/#{$name}/raw/#{version}/app/Linux/",
     "sha_256" => "f4556de71342b80c0233c0acff6a3ca037d321f25d33cdd61c798b1d87c723a6",
   }, {
     "os_name" => "macOS",
     "tar_name" => "#{$name}-#{version}-macos.tar.gz",
-    "base_url" => "https://github.com/aiurovet/#{$name}/raw/release/#{version}/app/macOS/",
+    "base_url" => "https://github.com/aiurovet/#{$name}/raw/#{version}/app/macOS/",
     "sha_256" => "2d9a8fa883a91612b7382e9d2fea381709d4666bb0c6c7e2e9596c76b53d9f7c",
   },];
 
