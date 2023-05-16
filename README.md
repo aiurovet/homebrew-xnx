@@ -1,1 +1,1 @@
-# homebrew-xnx
+# homebrew-chest
