@@ -18,7 +18,7 @@ class Xnx < Formula
   #
   desc "Command-line utility for sophisticated search and replace followed by calling external executables"
   license "MIT"
-  version "0.2.0"
+  version "0.1.0"
   homepage "https://aiurovet.com/applications/#{$name}.html"
 
   # List of all setup variations
