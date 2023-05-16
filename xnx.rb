@@ -1,13 +1,13 @@
 #
 # Copyright (c) 2023 Alexander Iurovetski
 #
-# brew tap aiurovet/chest && brew install chest
-# brew uninstall chest && brew untap aiurovet/chest
+# brew tap aiurovet/xnx && brew install xnx
+# brew uninstall xnx && brew untap aiurovet/xnx
 #
 # Upon any change, this file should be copied
-# from chest/scripts/install/brew to homebrew-chest/
+# from xnx/scripts/install/brew to homebrew-xnx/
 #
-class Chest < Formula
+class Xnx < Formula
   # Getting short class name, as "#{name}" gets stripped off the namespace only
   # when reached the install function
   #
@@ -27,12 +27,12 @@ class Chest < Formula
     "os_name" => "Linux",
     "tar_name" => "#{$name}-#{version}-linux-amd64.tar.gz",
     "base_url" => "https://github.com/aiurovet/#{$name}/raw/#{version}/app/Linux/",
-    "sha_256" => "485cc4c650a377ebd1a74c5131046db5ab33baeaa95f7a9cd2c2cd4238ba23ac",
+    "sha_256" => "f4556de71342b80c0233c0acff6a3ca037d321f25d33cdd61c798b1d87c723a6",
   }, {
     "os_name" => "macOS",
     "tar_name" => "#{$name}-#{version}-macos.tar.gz",
     "base_url" => "https://github.com/aiurovet/#{$name}/raw/#{version}/app/macOS/",
-    "sha_256" => "8f25a7bdaca614865a7b59b1c84d653f6a4c65bed6358ec409af83fd4b4313b3",
+    "sha_256" => "2d9a8fa883a91612b7382e9d2fea381709d4666bb0c6c7e2e9596c76b53d9f7c",
   },];
 
   # Getting this setup and full URL based on the current OS
